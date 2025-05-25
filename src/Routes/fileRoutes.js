@@ -3,7 +3,8 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
-const { uploadFile, toggleFavourite, renameFile, copyFile, deleteFile } = require("../Controllers/fileController");
+const { uploadFile, toggleFavourite, renameFile, copyFile, deleteFile, getAllNotes, getAllPDFs, getAllImages } = require("../Controllers/fileController");
+const getRecentFiles = require("../Controllers/getRecentFiles");
 const { verifyToken } = require("../Middlewares/authMiddleware");
 
 
@@ -21,6 +22,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 
+router.get("/notes", verifyToken, getAllNotes);
+router.get("/pdfs", verifyToken, getAllPDFs);
+router.get("/images", verifyToken, getAllImages);
+router.get("/recent", verifyToken, getRecentFiles);
 router.post("/", verifyToken, upload.single("file"), uploadFile);
 router.patch("/:id/favourite", verifyToken, toggleFavourite);
 router.patch("/:id/rename", verifyToken, renameFile);

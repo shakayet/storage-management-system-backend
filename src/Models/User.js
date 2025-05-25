@@ -34,6 +34,12 @@ const userSchema = new mongoose.Schema({
     resetPasswordExpire: {
         type: Date,
     },
+    securityPassword: {
+        type: String,
+        default: null,
+        select: false, // Hide by default in queries
+    },
+
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

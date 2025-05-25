@@ -14,7 +14,7 @@ exports.register = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = await User.create({ name, email, password: hashedPassword });
 
-    const token = generateToken(newUser._id);
+    const token = generateToken(newUser);
     res.status(201).json({ user: newUser, token });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -32,7 +32,7 @@ exports.login = async (req, res) => {
     const match = await bcrypt.compare(password, user.password);
     if (!match) return res.status(400).json({ message: 'Invalid credentials' });
 
-    const token = generateToken(user._id);
+    const token = generateToken(user);
     res.json({ user, token });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -49,7 +49,7 @@ exports.googleLogin = async (req, res) => {
       user = await User.create({ name, email, googleId, profileImage });
     }
 
-    const token = generateToken(user._id);
+    const token = generateToken(user);
     res.json({ user, token });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -98,4 +98,24 @@ exports.resetPassword = async (req, res) => {
   await user.save();
 
   res.json({ message: 'Password reset successful' });
+};
+
+exports.setSecurityPassword = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    const { password } = req.body;
+
+    if (!password || password.length < 6) {
+      return res.status(400).json({ message: "Password must be at least 6 characters" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    await User.findByIdAndUpdate(userId, { securityPassword: hashedPassword });
+
+    res.status(200).json({ message: "Security password set successfully" });
+  } catch (error) {
+    console.error("Set security password error:", error);
+    res.status(500).json({ message: "Failed to set security password", error: error.message || error });
+  }
 };

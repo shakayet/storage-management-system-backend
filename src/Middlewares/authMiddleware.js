@@ -11,8 +11,10 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log("Decoded token in middleware:", decoded); // ✅ Confirm here
-    req.user = decoded;
+
+    // Make sure req.user is an object with id
+    req.user = { id: decoded.id }; 
+
     next();
   } catch (err) {
     return res.status(403).json({ message: "Invalid token" });
