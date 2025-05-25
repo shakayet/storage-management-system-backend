@@ -3,8 +3,9 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
-const { uploadFile } = require("../Controllers/fileController");
+const { uploadFile, toggleFavourite, renameFile, copyFile, deleteFile } = require("../Controllers/fileController");
 const { verifyToken } = require("../Middlewares/authMiddleware");
+
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({
@@ -19,9 +20,12 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// @route   POST /api/files
-// @desc    Upload a file (note, image, or pdf)
-// @access  Private
+
 router.post("/", verifyToken, upload.single("file"), uploadFile);
+router.patch("/:id/favourite", verifyToken, toggleFavourite);
+router.patch("/:id/rename", verifyToken, renameFile);
+router.post("/:id/copy", verifyToken, copyFile);
+router.delete("/:id", verifyToken, deleteFile);
+
 
 module.exports = router;
