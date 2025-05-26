@@ -73,9 +73,7 @@ server.js
 | Method | Endpoint                             | Description                   |
 |--------|--------------------------------------|-------------------------------|
 | POST   | `/api/folders`                       | Create a new folder           |
-| PATCH  | `/api/folders/rename/:id`            | Rename a folder               |
-| DELETE | `/api/folders/:id`                   | Delete a folder               |
-| PATCH  | `/api/folders/set-secure/:id`        | Mark a folder as secure       |
+| PATCH  | `/api/folders/:id/secure`            | Mark a folder as secure       |
 
 ---
 
@@ -83,25 +81,24 @@ server.js
 
 | Method | Endpoint                             | Description                             |
 |--------|--------------------------------------|-----------------------------------------|
-| POST   | `/api/secure-folder/create`          | Create a password-protected folder      |
 | PATCH  | `/api/profile/security-password`     | Set or update security password         |
-| GET    | `/api/secure-folder/unlock/:id`      | Access secure folder using password     |
+| GET    | `/api/secure-folder/secure`          | Access secure folder using password     |
 
 ---
 
 ##  File Routes
 
-| Method | Endpoint                                | Description                            |
+| Method | Endpoint                                 | Description                            |
 |--------|------------------------------------------|----------------------------------------|
-| POST   | `/api/files/upload/image`               | Upload an image file                   |
-| POST   | `/api/files/upload/note`                | Upload a note file                     |
-| POST   | `/api/files/upload/pdf`                 | Upload a PDF file                      |
-| PATCH  | `/api/files/rename/:id`                 | Rename a file                          |
-| PATCH  | `/api/files/favourite/:id`              | Mark file as favourite                 |
-| PATCH  | `/api/files/copy/:id`                   | Duplicate/copy a file                  |
-| DELETE | `/api/files/delete/:id`                 | Delete a file                          |
-| GET    | `/api/files/recent`                     | Get recently uploaded files            |
-| GET    | `/api/files/by-date?date=YYYY-MM-DD`    | Get files uploaded on a specific date  |
+| POST   | `/api/files/upload/image`                | Upload an image file                   |
+| POST   | `/api/files/upload/note`                 | Upload a note file                     |
+| POST   | `/api/files/upload/pdf`                  | Upload a PDF file                      |
+| PATCH  | `/api/files/rename/:id`                  | Rename a file                          |
+| PATCH  | `/api/files/favourite/:id`               | Mark file as favourite                 |
+| PATCH  | `/api/files/copy/:id`                    | Duplicate/copy a file                  |
+| DELETE | `/api/files/delete/:id`                  | Delete a file                          |
+| GET    | `/api/files/recent`                      | Get recently uploaded files            |
+| GET    | `/api/files/by-date?date=YYYY-MM-DD`     | Get files uploaded on a specific date  |
 
 ---
 
