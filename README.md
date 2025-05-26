@@ -1,10 +1,10 @@
-# 📦 Storage Management System Backend
+#  Storage Management System Backend
 
 A secure and feature-rich file storage backend built using **Node.js**, **Express**, and **MongoDB**, supporting user authentication, file operations, secure folders, user profile management, and detailed file summaries.
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **Node.js**
 - **Express.js**
@@ -21,32 +21,14 @@ A secure and feature-rich file storage backend built using **Node.js**, **Expres
 ## 📁 Folder Structure
 
 src/
-├── Controllers/
-│ ├── authController.js
-│ ├── fileController.js
-│ ├── folderController.js
-│ ├── profileController.js
-│ ├── secureFolderController.js
-│ └── getFileSummary.js
-├── Middlewares/
-│ ├── authMiddleware.js
-│ ├── uploadMiddleWare.js
-│ └── verifySecureAccess.js
-├── Models/
-│ ├── User.js
-│ ├── File.js
-│ └── Folder.js
-├── Routes/
-│ ├── authRoutes.js
-│ ├── fileRoutes.js
-│ ├── folderRoutes.js
-│ ├── profileRoutes.js
-│ ├── secureFolderRoutes.js
-│ └── summaryRoutes.js
-├── uploads/
-├── app.js
-└── server.js
-
+|__ Controllers/
+|__ Middlewares/
+|__ Models/
+|__ Routes/
+|__ uploads/
+|__ app.js
+server.js
+.env
 
 ---
 
@@ -144,29 +126,34 @@ src/
 
 ---
 
-##  Environment Variables
+## 🌐 Environment Variables
 
-Create a `.env` file in your root directory:
+Create a `.env` file in your root directory and add the following:
 
+```env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-
+```
 ---
 
 ## API Testing with Postman
 
+```bash
 Set the Authorization header:
 Bearer <your_token>
 Upload files using form-data with fields:
 type: one of note, pdf, image
+```
 
 ---
 
 ## Running the Server
 
+```bash
 npm install
 npm run dev
 Server runs on http://localhost:5000
+```
 
 
