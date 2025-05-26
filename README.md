@@ -65,74 +65,81 @@ src/
 
 ---
 
-## 🔐 Authentication Routes
+## Authentication Routes
 
-| Method | Endpoint              | Description                  |
-|--------|-----------------------|------------------------------|
-| POST   | `/api/auth/register`  | Register a new user          |
-| POST   | `/api/auth/login`     | Login and receive JWT        |
-
----
-
-## 📄 File Routes
-
-| Method | Endpoint                 | Description                         |
-|--------|--------------------------|-------------------------------------|
-| POST   | `/api/files/upload`      | Upload a file (note/pdf/image)      |
-| GET    | `/api/files/:id`         | Get single file by ID               |
-| PATCH  | `/api/files/rename/:id`  | Rename a file                       |
-| DELETE | `/api/files/delete/:id`  | Delete a file                       |
-| GET    | `/api/files/by-date?date=YYYY-MM-DD` | Get files uploaded on a specific date |
+Method	Endpoint	Description
+POST	/api/auth/register	Register a new user
+POST	/api/auth/login	Login and receive JWT token
+POST	/api/auth/forgot-password	Request password reset link
+POST	/api/auth/reset-password	Reset password using token
 
 ---
 
-##  Folder Routes
+## Folder Routes
 
-| Method | Endpoint                 | Description                 |
-|--------|--------------------------|-----------------------------|
-| POST   | `/api/folders/create`    | Create a new folder         |
-| GET    | `/api/folders`           | Get all folders             |
-| PATCH  | `/api/folders/rename/:id`| Rename a folder             |
-| DELETE | `/api/folders/:id`       | Delete a folder             |
+Method	Endpoint	Description
+POST	/api/folders/create	Create a new folder
+PATCH	/api/folders/rename/:id	Rename a folder
+DELETE	/api/folders/:id	Delete a folder
+PATCH	/api/folders/set-secure/:id	Mark a folder as secure
 
 ---
 
-##  Secure Folder Routes
+## Secure Folder Routes
 
-| Method | Endpoint                            | Description                          |
-|--------|-------------------------------------|--------------------------------------|
-| POST   | `/api/secure-folder/create`         | Create a password-protected folder   |
-| GET    | `/api/secure-folder/unlock/:id`     | Access secure folder with password   |
+Method	Endpoint	Description
+POST	/api/secure-folder/create	Create a password-protected folder
+PATCH	/api/profile/security-password	Set or update security password
+GET	/api/secure-folder/unlock/:id	Access secure folder using password
+
+---
+
+## File Routes
+
+Method	Endpoint	Description
+POST	/api/files/upload/image	Upload an image file
+POST	/api/files/upload/note	Upload a note file
+POST	/api/files/upload/pdf	Upload a PDF file
+PATCH	/api/files/rename/:id	Rename a file
+PATCH	/api/files/favourite/:id	Mark file as favourite
+PATCH	/api/files/copy/:id	Duplicate/copy a file
+DELETE	/api/files/delete/:id	Delete a file
+GET	/api/files/recent	Get recently uploaded files
+GET	/api/files/by-date?date=YYYY-MM-DD	Get files uploaded on a specific date
+
+---
+
+## File Categories 
+
+Method	Endpoint	Description
+GET	/api/files/notes	Get all uploaded note files
+GET	/api/files/pdfs	Get all uploaded PDF files
+GET	/api/files/images	Get all uploaded image files
 
 ---
 
 ##  File Summary Routes
 
-| Method | Endpoint                        | Description                                  |
-|--------|----------------------------------|----------------------------------------------|
-| GET    | `/api/summary/notes-summary`     | Get note files count and total size          |
-| GET    | `/api/summary/pdf-summary`       | Get PDF files count and total size           |
-| GET    | `/api/summary/images-summary`    | Get image files count and total size         |
-| GET    | `/api/summary/overall-summary`   | Get total storage used and remaining         |
+Method	Endpoint	Description
+GET	/api/summary/notes-summary	Note files count and total size
+GET	/api/summary/pdf-summary	PDF files count and total size
+GET	/api/summary/images-summary	Image files count and total size
+GET	/api/summary/overall-summary	Total storage used and remaining
 
 ---
 
 ##  Profile Routes
 
-| Method | Endpoint                                | Description                          |
-|--------|------------------------------------------|--------------------------------------|
-| GET    | `/api/profile/me`                        | Get current user profile             |
-| PATCH  | `/api/profile/update`                    | Update profile info                  |
-| PATCH  | `/api/profile/security-password`         | Set/update security password         |
-| DELETE | `/api/profile/delete-account`            | Delete user account                  |
+Method	Endpoint	Description
+GET	/api/profile/me	Get current user profile
+PATCH	/api/profile/update	Update profile info
+DELETE	/api/profile/delete-account	Delete user account
 
 ---
 
 ##  Environment Variables
 
-Create a `.env` file at the root and add:
-
-```env
+.env
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
@@ -154,8 +161,4 @@ npm install
 npm run dev
 Server runs on http://localhost:5000
 
----
-
-## License
-This project is for learning and demo purposes only. All rights reserved by the author.
 
