@@ -1,10 +1,10 @@
-# 📦 Storage Management System Backend
+#  Storage Management System Backend
 
 A secure and feature-rich file storage backend built using **Node.js**, **Express**, and **MongoDB**, supporting user authentication, file operations, secure folders, user profile management, and detailed file summaries.
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 - **Node.js**
 - **Express.js**
@@ -30,6 +30,8 @@ src/
 │ └── getFileSummary.js
 ├── Middlewares/
 │ └── authMiddleware.js
+| ├── uploadMiddleWare.js
+| ├── verifySecureAccess.js
 ├── Models/
 │ ├── User.js
 │ ├── File.js
@@ -45,9 +47,6 @@ src/
 ├── app.js
 └── server.js
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -87,7 +86,7 @@ Edit
 
 ---
 
-## 📁 Folder Routes
+##  Folder Routes
 
 | Method | Endpoint                 | Description                 |
 |--------|--------------------------|-----------------------------|
@@ -98,7 +97,7 @@ Edit
 
 ---
 
-## 🔐 Secure Folder Routes
+##  Secure Folder Routes
 
 | Method | Endpoint                            | Description                          |
 |--------|-------------------------------------|--------------------------------------|
@@ -107,7 +106,7 @@ Edit
 
 ---
 
-## 📊 File Summary Routes
+##  File Summary Routes
 
 | Method | Endpoint                        | Description                                  |
 |--------|----------------------------------|----------------------------------------------|
@@ -118,7 +117,7 @@ Edit
 
 ---
 
-## 👤 Profile Routes
+##  Profile Routes
 
 | Method | Endpoint                                | Description                          |
 |--------|------------------------------------------|--------------------------------------|
@@ -129,7 +128,7 @@ Edit
 
 ---
 
-## 📌 Environment Variables
+##  Environment Variables
 
 Create a `.env` file at the root and add:
 
