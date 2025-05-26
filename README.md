@@ -137,6 +137,7 @@ PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
+---
 
 ## API Testing with Postman
 Set the Authorization header:
@@ -144,11 +145,15 @@ Bearer <your_token>
 Upload files using form-data with fields:
 type: one of note, pdf, image
 
+---
+
 ## Running the Server
 
 npm install
 npm run dev
 Server runs on http://localhost:5000
+
+---
 
 📝 License
 This project is for learning and demo purposes only. All rights reserved by the author.
