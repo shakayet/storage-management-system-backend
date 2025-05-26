@@ -140,6 +140,7 @@ JWT_SECRET=your_secret_key
 ---
 
 ## API Testing with Postman
+
 Set the Authorization header:
 Bearer <your_token>
 Upload files using form-data with fields:
@@ -155,6 +156,6 @@ Server runs on http://localhost:5000
 
 ---
 
-📝 License
+## License
 This project is for learning and demo purposes only. All rights reserved by the author.
 
