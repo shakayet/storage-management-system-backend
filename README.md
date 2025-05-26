@@ -72,7 +72,7 @@ server.js
 
 | Method | Endpoint                             | Description                   |
 |--------|--------------------------------------|-------------------------------|
-| POST   | `/api/folders/create`                | Create a new folder           |
+| POST   | `/api/folders`                       | Create a new folder           |
 | PATCH  | `/api/folders/rename/:id`            | Rename a folder               |
 | DELETE | `/api/folders/:id`                   | Delete a folder               |
 | PATCH  | `/api/folders/set-secure/:id`        | Mark a folder as secure       |
