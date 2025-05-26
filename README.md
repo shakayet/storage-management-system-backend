@@ -88,17 +88,17 @@ server.js
 
 ##  File Routes
 
-| Method | Endpoint                                 | Description                            |
-|--------|------------------------------------------|----------------------------------------|
-| POST   | `/api/files/upload/image`                | Upload an image file                   |
-| POST   | `/api/files/upload/note`                 | Upload a note file                     |
-| POST   | `/api/files/upload/pdf`                  | Upload a PDF file                      |
-| PATCH  | `/api/files/rename/:id`                  | Rename a file                          |
-| PATCH  | `/api/files/favourite/:id`               | Mark file as favourite                 |
-| PATCH  | `/api/files/copy/:id`                    | Duplicate/copy a file                  |
-| DELETE | `/api/files/delete/:id`                  | Delete a file                          |
-| GET    | `/api/files/recent`                      | Get recently uploaded files            |
-| GET    | `/api/files/by-date?date=YYYY-MM-DD`     | Get files uploaded on a specific date  |
+| Method | Endpoint                                         | Description                            |
+|--------|--------------------------------------------------|----------------------------------------|
+| POST   | `/api/files`                                     | Upload an image file                   |
+| POST   | `/api/files`                                     | Upload a note file                     |
+| POST   | `/api/files`                                     | Upload a PDF file                      |
+| PATCH  | `/api/files/:id/rename`                          | Rename a file                          |
+| PATCH  | `/api/files/:id/favourite`                       | Mark file as favourite                 |
+| PATCH  | `/api/files/:id/copy`                            | Duplicate/copy a file                  |
+| DELETE | `/api/files/:id`                                 | Delete a file                          |
+| GET    | `/api/files/recent`                              | Get recently uploaded files            |
+| GET    | `/api/summary/files-by-date?date=YYYY-MM-DD`     | Get files uploaded on a specific date  |
 
 ---
 
