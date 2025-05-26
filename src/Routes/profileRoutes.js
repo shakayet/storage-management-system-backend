@@ -5,6 +5,7 @@ const path = require("path");
 
 const { updateProfile, setSecurityPassword } = require("../Controllers/profileController");
 const { verifyToken } = require("../Middlewares/authMiddleware");
+const { deleteAccount } = require('../Controllers/deleteAccount');
 
 // Multer setup
 const storage = multer.diskStorage({
@@ -22,5 +23,6 @@ const upload = multer({ storage });
 // Routes
 router.patch("/security-password", verifyToken, setSecurityPassword);
 router.patch("/update", verifyToken, upload.single("profilePhoto"), updateProfile);
+router.delete('/delete-account', verifyToken, deleteAccount);
 
 module.exports = router;

@@ -11,13 +11,28 @@ const verifyToken = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    // Make sure req.user is an object with id
-    req.user = { id: decoded.id }; 
+    
+    // Debugging logs
+    console.log("Decoded token:", decoded);
+    
+    // Properly attach user information
+    req.user = {
+      id: decoded._id,    // Your token uses _id
+      _id: decoded._id,   // Duplicate for compatibility
+      email: decoded.email,
+      role: decoded.role,
+      rawToken: decoded   // For debugging
+    };
+    
+    console.log("Attached user:", req.user);
 
     next();
   } catch (err) {
-    return res.status(403).json({ message: "Invalid token" });
+    console.error("Token verification error:", err);
+    return res.status(403).json({ 
+      message: "Invalid token",
+      error: err.message 
+    });
   }
 };
 
