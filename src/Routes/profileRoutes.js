@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const path = require("path");
 
-const { updateProfile, setSecurityPassword } = require("../Controllers/profileController");
+const { updateProfile, setSecurityPassword, getMyProfile } = require("../Controllers/profileController");
 const { verifyToken } = require("../Middlewares/authMiddleware");
 const { deleteAccount } = require('../Controllers/deleteAccount');
 
@@ -24,5 +24,6 @@ const upload = multer({ storage });
 router.patch("/security-password", verifyToken, setSecurityPassword);
 router.patch("/update", verifyToken, upload.single("profilePhoto"), updateProfile);
 router.delete('/delete-account', verifyToken, deleteAccount);
+router.get('/me', verifyToken, getMyProfile);
 
 module.exports = router;
