@@ -65,7 +65,7 @@ src/
 
 ---
 
-## 🔐 Authentication Routes
+##  Authentication Routes
 
 | Method | Endpoint                        | Description                      |
 |--------|----------------------------------|----------------------------------|
@@ -76,7 +76,7 @@ src/
 
 ---
 
-## 📁 Folder Routes
+##  Folder Routes
 
 | Method | Endpoint                             | Description                   |
 |--------|--------------------------------------|-------------------------------|
@@ -87,7 +87,7 @@ src/
 
 ---
 
-## 🔐 Secure Folder Routes
+##  Secure Folder Routes
 
 | Method | Endpoint                             | Description                             |
 |--------|--------------------------------------|-----------------------------------------|
@@ -97,7 +97,7 @@ src/
 
 ---
 
-## 📄 File Routes
+##  File Routes
 
 | Method | Endpoint                                | Description                            |
 |--------|------------------------------------------|----------------------------------------|
@@ -113,7 +113,7 @@ src/
 
 ---
 
-## 📂 File Categories
+##  File Categories
 
 | Method | Endpoint             | Description                    |
 |--------|----------------------|--------------------------------|
@@ -123,7 +123,7 @@ src/
 
 ---
 
-## 📊 File Summary Routes
+##  File Summary Routes
 
 | Method | Endpoint                        | Description                            |
 |--------|----------------------------------|----------------------------------------|
@@ -134,7 +134,7 @@ src/
 
 ---
 
-## 👤 Profile Routes
+##  Profile Routes
 
 | Method | Endpoint                          | Description                  |
 |--------|------------------------------------|------------------------------|
@@ -144,11 +144,10 @@ src/
 
 ---
 
-## 🧪 Environment Variables
+##  Environment Variables
 
 Create a `.env` file in your root directory:
 
-```env```
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
