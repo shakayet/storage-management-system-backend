@@ -136,23 +136,16 @@ Create a `.env` file at the root and add:
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-🧪 API Testing with Postman
-Set the Authorization header:
 
-php-template
-Copy
-Edit
+
+## API Testing with Postman
+Set the Authorization header:
 Bearer <your_token>
 Upload files using form-data with fields:
-
-file: (the file)
-
 type: one of note, pdf, image
 
-🚦 Running the Server
-bash
-Copy
-Edit
+## Running the Server
+
 npm install
 npm run dev
 Server runs on http://localhost:5000
