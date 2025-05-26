@@ -17,7 +17,7 @@ const folderRoutes = require('./Routes/folderRoutes');
 const fileRoutes = require('./Routes/fileRoutes');
 const profileRoutes = require("./Routes/profileRoutes");
 const secureFolderRoutes = require('./Routes/secureFolderRoutes');
-const summaryRoutes = require('./routes/summaryRoutes');
+const summaryRoutes = require('./Routes/summaryRoutes');
 
 // Use routes
 app.use('/api/auth', authRoutes);
