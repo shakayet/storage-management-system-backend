@@ -18,8 +18,9 @@ A secure and feature-rich file storage backend built using **Node.js**, **Expres
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
+```
 src/
 |__ Controllers/
 |__ Middlewares/
@@ -29,10 +30,11 @@ src/
 |__ app.js
 server.js
 .env
+```
 
 ---
 
-## 🧠 Features
+##  Features
 
 - ✅ User registration & login (JWT-based)
 - ✅ Upload notes, PDFs, and images
@@ -126,7 +128,7 @@ server.js
 
 ---
 
-## 🌐 Environment Variables
+##  Environment Variables
 
 Create a `.env` file in your root directory and add the following:
 
