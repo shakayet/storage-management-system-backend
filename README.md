@@ -150,7 +150,7 @@ JWT_SECRET=your_secret_key
 Set the Authorization header:
 Bearer <your_token>
 Upload files using form-data with fields:
-type: one of note, pdf, image
+type: one of this note, pdf, image
 ```
 
 ---
