@@ -1,6 +1,6 @@
 #  Storage Management System Backend
 
-A secure and feature-rich file storage backend built using **Node.js**, **Express**, and **MongoDB**, supporting user authentication, file operations, secure folders, user profile management, and detailed file summaries.
+A secure and feature-riched file storage backend built using **Node.js**, **Express**, and **MongoDB**, supporting user authentication, file operations, secure folders, user profile management, and detailed file summaries.
 
 ---
 
