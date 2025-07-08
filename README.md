@@ -148,7 +148,7 @@ JWT_SECRET=your_secret_key
 
 ```bash
 Set the Authorization header:
-Bearer <your_token>
+Bearer <your token>
 Upload files using form-data with fields:
 type: one of this note, pdf, image
 ```
