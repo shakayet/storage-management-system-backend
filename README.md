@@ -42,7 +42,7 @@ server.js
 
 ---
 
-##  Features
+## Project Features
 
 - ✅ User registration & login (JWT-based)
 - ✅ Upload notes, PDFs, and images
